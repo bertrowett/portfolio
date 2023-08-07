@@ -16,6 +16,10 @@ body {
   font-family: 'Noto Sans Mono', monospace;
 }
 
+header {
+  background-color: var(--black);
+}
+
 .turqoise {
   color: var(--turquoise);
 }
