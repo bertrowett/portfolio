@@ -7,10 +7,24 @@
 :root {
   --black: #303030;
   --white: #ebebeb;
+  --turquoise: #45deec;
 }
 
 body {
   background-color: var(--black);
   color: var(--white);
   font-family: 'Noto Sans Mono', monospace;
+}
+
+.turqoise {
+  color: var(--turquoise);
+}
+
+.header-link:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.header-link:hover .turqoise {
+  color: var(--black);
 }
