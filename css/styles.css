@@ -3,3 +3,14 @@
 *::after {
   box-sizing: border-box;
 }
+
+:root {
+  --black: #303030;
+  --white: #ebebeb;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: 'Noto Sans Mono', monospace;
+}
