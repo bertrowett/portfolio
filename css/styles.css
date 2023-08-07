@@ -23,7 +23,7 @@ header {
   background-color: var(--black);
 }
 
-.turqoise {
+.turquoise {
   color: var(--turquoise);
 }
 
@@ -32,7 +32,7 @@ header {
   color: var(--black);
 }
 
-.header-link:hover .turqoise {
+.header-link:hover .turquoise {
   color: var(--black);
 }
 
