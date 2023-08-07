@@ -8,6 +8,9 @@
   --black: #303030;
   --white: #ebebeb;
   --turquoise: #45deec;
+  --purple: #5B3ACE;
+  --red: #C1432C;
+  --yellow: #A09E2B;
 }
 
 body {
@@ -32,3 +35,4 @@ header {
 .header-link:hover .turqoise {
   color: var(--black);
 }
+
