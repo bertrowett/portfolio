@@ -22,6 +22,10 @@
   color: var(--green);
 }
 
+.red {
+  color: var(--red);
+}
+
 body {
   background-color: var(--black);
   color: var(--white);
