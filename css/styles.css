@@ -14,6 +14,10 @@
   --green: #41CA32;
 }
 
+.white {
+  color: var(--white);
+}
+
 .turquoise {
   color: var(--turquoise);
 }
