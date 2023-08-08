@@ -8,17 +8,31 @@ fetch('projects.json')
         data.projects.forEach((project) => {
             // Project title (with icons)
             let content = '<h3 class="mt-4 text-xl turquoise">'
-            content += '<span class="arrow_p' + count + ' mr-8 red"><i class="fa-solid fa-right-long"></i></span>'
-            content += project.name
-            content += '<i class="downchev_p' + count + ' fa-solid fa-chevron-down ml-24 white"></i>'
-            content += '<i class="upchev_p' + count + ' fa-solid fa-chevron-up ml-24 white hidden"></i></h3>'
-            // 
+                content += '<span class="arrow_p' + count + ' mr-8 red"><i class="fa-solid fa-right-long"></i></span>'
+                content += project.name
+                content += '<i class="downchev_p' + count + ' fa-solid fa-chevron-down ml-24 white"></i>'
+                content += '<i class="upchev_p' + count + ' fa-solid fa-chevron-up ml-24 white hidden"></i>'
+            content +='</h3>'
+            
+            // Content flex container
+            content += '<div class="pt-4 flex gap-4">'
+                // Image
+                content += '<div class="w-2/5">'
+                    content += '<img src="' + project.img + '" alt="' + project.img_alt + '" />'
+                content += '</div>'
+                // Text + icons flex container
+                content += '<div class="w-3/5 flex flex-col gap-4 justify-between">'
+                    // Summary text
+                    content += '<p>' + project.summary + '</p>'
+                    // Icons
+                    content += '<nav>'
+                        content += '<a href="' + project.github + '"><i class="fa-brands fa-github text-2xl mr-4"></i></a>'
+                        content += '<a href="' + project.site + '"><i class="fa-solid fa-up-right-from-square text-2xl"></i></a>'
+                    content += '</nav>'
+                content += '</div>'
+            content += '</div>'
             content +=
-            content +=
-            content +=
-            content +=
-            content +=
-            content +=
+
 
             projectsSection.innerHTML += content
             

@@ -2,7 +2,7 @@
     "projects": [
         {
             "name": "project_1",
-            "img": "images/coming_soon",
+            "img": "images/coming_soon.jpg",
             "img_alt": "A laptop on a table with a yellow page open that says 'UNDER CONSTRUCTION', to signify the project image is not yet available.",
             "summary": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, itaque repudiandae ad quos odit voluptatum fugit labore a eveniet dolor voluptates, dolorum accusamus suscipit. Dolor perspiciatis natus architecto numquam vitae.",
             "github": "#portfolio",
@@ -10,7 +10,7 @@
         },
         {
             "name": "project_2",
-            "img": "images/coming_soon",
+            "img": "images/coming_soon.jpg",
             "img_alt": "A laptop on a table with a yellow page open that says 'UNDER CONSTRUCTION', to signify the project image is not yet available.",
             "summary": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque quia dolor ipsam odit, vero, maxime nihil sed consectetur repudiandae voluptate hic corrupti illo ipsum, ab id repellat nemo corporis optio?",
             "github": "#portfolio",
@@ -18,7 +18,7 @@
         },
         {
             "name": "project_3",
-            "img": "images/coming_soon",
+            "img": "images/coming_soon.jpg",
             "img_alt": "A laptop on a table with a yellow page open that says 'UNDER CONSTRUCTION', to signify the project image is not yet available.",
             "summary": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse dolorum iusto delectus excepturi! Ea, quo ab, repellendus, excepturi consequatur architecto at totam error atque possimus in voluptas. Id, quisquam aspernatur.",
             "github": "#portfolio",
