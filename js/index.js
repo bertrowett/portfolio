@@ -9,9 +9,9 @@ fetch('projects.json')
 
         data.projects.forEach((project) => {
             // Project title (with icons)
-            let content = '<h3 class="mt-4 text-xl turquoise">'
-                content += '<span class="arrow_p' + count + ' mr-8 red"><i class="fa-solid fa-right-long"></i></span>'
-                content += project.name
+            let content = '<h3 class="mt-4 text-xl red">'
+                content += '<i class="arrow_p' + count + ' fa-solid fa-right-long mr-8"></i>'
+                content += '<span class="turquoise">' + project.name + '</span>'
                 content += '<i class="downchev_p' + count + ' fa-solid fa-chevron-down ml-24 white"></i>'
                 content += '<i class="upchev_p' + count + ' fa-solid fa-chevron-up ml-24 white hidden"></i>'
             content +='</h3>'
@@ -39,5 +39,32 @@ fetch('projects.json')
             
             count += 1
         })
+        openProject1()
     })
+
+function removeRedClass(target) {
+    target.classList.remove('red');
+}
+
+function addGreenClass(target) {
+    document.querySelector(target).classList.add('green');
+}
+
+function removeDownChevron(target) {
+    document.querySelector(target).classList.add('hidden');
+}
+
+function addUpChevron(target) {
+    document.querySelector(target).classList.remove('hidden');
+}
+
+function openProject1() {
+    const arrow_p1 = document.querySelector('.arrow_p1');
+    const downchev_p1 = document.querySelector('.downchev_p1');
+    const upchev_p1 = document.querySelector('.upchev_p1');
+    removeRedClass(arrow_p1);
+    addGreenClass(arrow_p1);
+    removeDownChevron(downchev_p1);
+    addUpChevron(upchev_p1);
+}
 
