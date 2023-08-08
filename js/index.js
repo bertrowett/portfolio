@@ -39,32 +39,69 @@ fetch('projects.json')
             
             count += 1
         })
+
+        // Defining targets
+        const arrow_p1 = document.querySelector('.arrow_p1')
+        const arrow_p2 = document.querySelector('.arrow_p2')
+        const arrow_p3 = document.querySelector('.arrow_p3')
+
+        const downchev_p1 = document.querySelector('.downchev_p1')
+        const downchev_p2 = document.querySelector('.downchev_p2')
+        const downchev_p3 = document.querySelector('.downchev_p3')
+
+        const upchev_p1 = document.querySelector('.upchev_p1')
+        const upchev_p2 = document.querySelector('.upchev_p2')
+        const upchev_p3 = document.querySelector('.upchev_p3')
+
+        const content_p1 = document.querySelector('.content_p1')
+        const content_p2 = document.querySelector('.content_p2')
+        const content_p3 = document.querySelector('.content_p3')
+
+        //Basic functions
+        function addGreenClass(target) {
+            target.classList.add('green');
+        }
+
+        function removeGreenClass(target) {
+            target.classList.remove('green');
+        }
+        
+        function unhide(target) {
+            target.classList.remove('hidden');
+        }
+
+        function hide(target) {
+            target.classList.add('hidden');
+        }
+        
+        //Combined functions
+        function openProject1() {
+            addGreenClass(arrow_p1);
+            hide(downchev_p1);
+            unhide(upchev_p1);
+            unhide(content_p1);
+        }
+
+        function closeProject(number) {
+            const arrow = document.querySelector('arrow_p' + number);
+            const downchev = document.querySelector('downchev_p' + number);
+            const upchev = document.querySelector('upchev_p' + number);
+            const content = document.querySelector('content_p' + number);
+            removeGreenClass(arrow);
+            unhide(downchev);
+            hide(upchev);
+            hide(content);
+            console.log(arrow);
+        }
+
+        //Immediately called
         openProject1()
+
+        //Event-called
+        upchev_p1.addEventListener('click', () => {
+            closeProject(1)
+        })
     })
 
-function removeRedClass(target) {
-    target.classList.remove('red');
-}
 
-function addGreenClass(target) {
-    document.querySelector(target).classList.add('green');
-}
-
-function removeDownChevron(target) {
-    document.querySelector(target).classList.add('hidden');
-}
-
-function addUpChevron(target) {
-    document.querySelector(target).classList.remove('hidden');
-}
-
-function openProject1() {
-    const arrow_p1 = document.querySelector('.arrow_p1');
-    const downchev_p1 = document.querySelector('.downchev_p1');
-    const upchev_p1 = document.querySelector('.upchev_p1');
-    removeRedClass(arrow_p1);
-    addGreenClass(arrow_p1);
-    removeDownChevron(downchev_p1);
-    addUpChevron(upchev_p1);
-}
 
