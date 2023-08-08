@@ -1,3 +1,4 @@
+// Populating Portfolio section with info on projects
 fetch('projects.json')
     .then((response) => {
         return response.json()
@@ -5,6 +6,7 @@ fetch('projects.json')
         const projectsSection = document.querySelector('.projects')
 
         let count = 1
+
         data.projects.forEach((project) => {
             // Project title (with icons)
             let content = '<h3 class="mt-4 text-xl turquoise">'
@@ -13,9 +15,9 @@ fetch('projects.json')
                 content += '<i class="downchev_p' + count + ' fa-solid fa-chevron-down ml-24 white"></i>'
                 content += '<i class="upchev_p' + count + ' fa-solid fa-chevron-up ml-24 white hidden"></i>'
             content +='</h3>'
-            
+
             // Content flex container
-            content += '<div class="pt-4 flex gap-4">'
+            content += '<div class="content_p' + count + ' pt-4 flex gap-4 hidden">'
                 // Image
                 content += '<div class="w-2/5">'
                     content += '<img src="' + project.img + '" alt="' + project.img_alt + '" />'
@@ -31,11 +33,11 @@ fetch('projects.json')
                     content += '</nav>'
                 content += '</div>'
             content += '</div>'
-            content +=
 
-
+            // Adding combined content to page
             projectsSection.innerHTML += content
             
             count += 1
         })
     })
+
