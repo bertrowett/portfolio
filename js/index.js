@@ -5,19 +5,17 @@ fetch('projects.json')
     }).then((data) => {
         const projectsSection = document.querySelector('.projects')
 
-        let count = 1
-
-        data.projects.forEach((project) => {
+        data.projects.forEach((project, index) => {
             // Project title (with icons)
             let content = '<h3 class="mt-4 text-xl red">'
-                content += '<i class="arrow_p' + count + ' fa-solid fa-right-long mr-8"></i>'
+                content += '<i class="arrow_p' + index + ' fa-solid fa-right-long mr-8"></i>'
                 content += '<span class="turquoise">' + project.name + '</span>'
-                content += '<i class="downchev_p' + count + ' fa-solid fa-chevron-down ml-24 white"></i>'
-                content += '<i class="upchev_p' + count + ' fa-solid fa-chevron-up ml-24 white hidden"></i>'
+                content += '<i class="downchev_p' + index + ' fa-solid fa-chevron-down ml-24 white" data-downchev="' + index + '"></i>'
+                content += '<i class="upchev_p' + index + ' fa-solid fa-chevron-up ml-24 white hidden" data-upchev="' + index + '"></i>'
             content +='</h3>'
 
             // Content flex container
-            content += '<div class="content_p' + count + ' pt-4 flex gap-4 hidden">'
+            content += '<div class="content_p' + index + ' pt-4 flex gap-4 hidden">'
                 // Image
                 content += '<div class="w-2/5">'
                     content += '<img src="' + project.img + '" alt="' + project.img_alt + '" />'
@@ -36,8 +34,6 @@ fetch('projects.json')
 
             // Adding combined content to page
             projectsSection.innerHTML += content
-            
-            count += 1
         })
 
         //Basic functions
@@ -81,31 +77,31 @@ fetch('projects.json')
         }
 
         //Immediately called
-        openProject(1)
+        openProject(0)
 
         //Event-called
+        document.querySelector('.downchev_p0').addEventListener('click', () => {
+            openProject(0) + closeProject(1) + closeProject(2)
+        })
+
         document.querySelector('.downchev_p1').addEventListener('click', () => {
-            openProject(1) + closeProject(2) + closeProject(3)
+            openProject(1) + closeProject(0) + closeProject(2)
         })
 
         document.querySelector('.downchev_p2').addEventListener('click', () => {
-            openProject(2) + closeProject(1) + closeProject(3)
+            openProject(2) + closeProject(0) + closeProject(1)
         })
 
-        document.querySelector('.downchev_p3').addEventListener('click', () => {
-            openProject(3) + closeProject(1) + closeProject(2)
+        document.querySelector('.upchev_p0').addEventListener('click', () => {
+            closeProject(0)
         })
 
         document.querySelector('.upchev_p1').addEventListener('click', () => {
             closeProject(1)
         })
-
+        
         document.querySelector('.upchev_p2').addEventListener('click', () => {
             closeProject(2)
-        })
-        
-        document.querySelector('.upchev_p3').addEventListener('click', () => {
-            closeProject(3)
         })
 
     })
