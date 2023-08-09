@@ -62,9 +62,9 @@ fetch('projects.json')
             document.querySelector(target).classList.add('green');
         }
 
-        // function makeRed(target) {
-        // //     target.classList.remove('green');
-        // }
+        function makeRed(target) {
+            document.querySelector(target).classList.remove('green');
+        }
         
         function unhide(target) {
             document.querySelector(target).classList.remove('hidden');
@@ -84,29 +84,45 @@ fetch('projects.json')
             hide(downchev);
             unhide(upchev);
             unhide(content);
-            console.log(content)
         }
 
-        // function closeProject(number) {
-        //     const arrow = document.querySelector('arrow_p' + number);
-        //     const downchev = document.querySelector('downchev_p' + number);
-        //     const upchev = document.querySelector('upchev_p' + number);
-        //     const content = document.querySelector('content_p' + number);
-        //     removeGreenClass(arrow);
-        //     unhide(downchev);
-        //     hide(upchev);
-        //     hide(content);
-        //     console.log(arrow);
-        // }
+        function closeProject(number) {
+            const arrow = '.arrow_p' + number
+            const downchev = '.downchev_p' + number
+            const upchev = '.upchev_p' + number
+            const content = '.content_p' + number
+            makeRed(arrow);
+            unhide(downchev);
+            hide(upchev);
+            hide(content);
+        }
 
         //Immediately called
         openProject(1)
 
         //Event-called
-        // upchev_p1.addEventListener('click', () => {
-        //     closeProject(1)
-        // })
+        document.querySelector('.downchev_p1').addEventListener('click', () => {
+            openProject(1) + closeProject(2) + closeProject(3)
+        })
+
+        document.querySelector('.downchev_p2').addEventListener('click', () => {
+            openProject(2) + closeProject(1) + closeProject(3)
+        })
+
+        document.querySelector('.downchev_p3').addEventListener('click', () => {
+            openProject(3) + closeProject(1) + closeProject(2)
+        })
+
+        document.querySelector('.upchev_p1').addEventListener('click', () => {
+            closeProject(1)
+        })
+
+        document.querySelector('.upchev_p2').addEventListener('click', () => {
+            closeProject(2)
+        })
+        
+        document.querySelector('.upchev_p3').addEventListener('click', () => {
+            closeProject(3)
+        })
+
     })
-
-
-
