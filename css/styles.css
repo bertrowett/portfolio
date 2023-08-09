@@ -57,3 +57,15 @@ header {
   color: var(--black);
 }
 
+.form-grid {
+  grid-template-columns: auto 1fr;
+}
+
+.input {
+  background-color: var(--black);
+}
+
+.send-email:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
