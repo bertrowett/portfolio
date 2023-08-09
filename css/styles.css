@@ -30,6 +30,14 @@
   color: var(--green);
 }
 
+.yellow {
+  color: var(--yellow);
+}
+
+.purple {
+  color: var(--purple);
+}
+
 body {
   background-color: var(--black);
   color: var(--white);
