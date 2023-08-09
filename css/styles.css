@@ -57,6 +57,14 @@ header {
   color: var(--black);
 }
 
+.ext-link {
+  color: var(--purple);
+}
+
+.ext-link:hover {
+  color: var(--white);
+}
+
 .form-grid {
   grid-template-columns: auto 1fr;
 }
