@@ -26,8 +26,8 @@ fetch('projects.json')
                     content += '<p>' + project.summary + '</p>'
                     // Icons
                     content += '<nav>'
-                        content += '<a href="' + project.github + '"><i class="fa-brands fa-github text-2xl mr-8"></i></a>'
-                        content += '<a href="' + project.site + '"><i class="fa-solid fa-up-right-from-square text-2xl"></i></a>'
+                        content += '<a href="' + project.github + '" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-github text-2xl mr-8"></i></a>'
+                        content += '<a href="' + project.site + '" target="_blank" rel="noreferrer noopener"><i class="fa-solid fa-up-right-from-square text-2xl"></i></a>'
                     content += '</nav>'
                 content += '</div>'
             content += '</div>'
