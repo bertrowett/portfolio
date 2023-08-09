@@ -10,8 +10,8 @@ fetch('projects.json')
             let content = '<h3 class="mt-4 text-xl red">'
                 content += '<i class="arrow_p' + index + ' fa-solid fa-right-long mr-8"></i>'
                 content += '<span class="turquoise">' + project.name + '</span>'
-                content += '<i class="downchev_p' + index + ' fa-solid fa-chevron-down ml-24 white" data-downchev="' + index + '"></i>'
-                content += '<i class="upchev_p' + index + ' fa-solid fa-chevron-up ml-24 white hidden" data-upchev="' + index + '"></i>'
+                content += '<i class="open-toggle downchev_p' + index + ' fa-solid fa-chevron-down ml-24 white" data-downchev="' + index + '"></i>'
+                content += '<i class="close-toggle upchev_p' + index + ' fa-solid fa-chevron-up ml-24 white hidden" data-upchev="' + index + '"></i>'
             content +='</h3>'
 
             // Content flex container
@@ -37,89 +37,69 @@ fetch('projects.json')
         })
 
         //Basic functions
-        function makeGreen(target) {
-            document.querySelector(target).classList.add('green');
-        }
+            function makeGreen(target) {
+                document.querySelector(target).classList.add('green');
+            }
 
-        function makeRed(target) {
-            document.querySelector(target).classList.remove('green');
-        }
-        
-        function unhide(target) {
-            document.querySelector(target).classList.remove('hidden');
-        }
+            function makeRed(target) {
+                document.querySelector(target).classList.remove('green');
+            }
+            
+            function unhide(target) {
+                document.querySelector(target).classList.remove('hidden');
+            }
 
-        function hide(target) {
-            document.querySelector(target).classList.add('hidden');
-        }
+            function hide(target) {
+                document.querySelector(target).classList.add('hidden');
+            }
         
         //Combined functions
-        function openProject(number) {
-            const arrow = '.arrow_p' + number
-            const downchev = '.downchev_p' + number
-            const upchev = '.upchev_p' + number
-            const content = '.content_p' + number
-            makeGreen(arrow);
-            hide(downchev);
-            unhide(upchev);
-            unhide(content);
-        }
+            function openProject(number) {
+                const arrow = '.arrow_p' + number
+                const downchev = '.downchev_p' + number
+                const upchev = '.upchev_p' + number
+                const content = '.content_p' + number
+                makeGreen(arrow);
+                hide(downchev);
+                unhide(upchev);
+                unhide(content);
+            }
 
-        function closeProject(number) {
-            const arrow = '.arrow_p' + number
-            const downchev = '.downchev_p' + number
-            const upchev = '.upchev_p' + number
-            const content = '.content_p' + number
-            makeRed(arrow);
-            unhide(downchev);
-            hide(upchev);
-            hide(content);
-        }
+            function closeProject(number) {
+                const arrow = '.arrow_p' + number
+                const downchev = '.downchev_p' + number
+                const upchev = '.upchev_p' + number
+                const content = '.content_p' + number
+                makeRed(arrow);
+                unhide(downchev);
+                hide(upchev);
+                hide(content);
+            }
 
         //Immediately called
-        openProject(0)
+            openProject(0)
 
         //Event-called
-        // document.querySelector('.downchev_p0').addEventListener('click', () => {
-        //     openProject(0) + closeProject(1) + closeProject(2)
-        // })
+            const downchevs = document.querySelectorAll('.open-toggle')
 
-        // document.querySelector('.downchev_p1').addEventListener('click', () => {
-        //     openProject(1) + closeProject(0) + closeProject(2)
-        // })
-
-        // document.querySelector('.downchev_p2').addEventListener('click', () => {
-        //     openProject(2) + closeProject(0) + closeProject(1)
-        // })
-
-        // document.querySelector('.upchev_p0').addEventListener('click', () => {
-        //     closeProject(0)
-        // })
-
-        // document.querySelector('.upchev_p1').addEventListener('click', () => {
-        //     closeProject(1)
-        // })
-        
-        // document.querySelector('.upchev_p2').addEventListener('click', () => {
-        //     closeProject(2)
-        // })
-
-        const downchevs = document.querySelectorAll('.fa-chevron-down')
-
-        downchevs.forEach((downchev) => {
-            downchev.addEventListener('click', (event) => {
-                const clickedDownchev = event.target.dataset.downchev
-                openProject(clickedDownchev)
+            downchevs.forEach((downchev) => {
+                downchev.addEventListener('click', (event) => {
+                    downchevs.forEach((downchev) => {
+                        const number = downchev.dataset.downchev
+                        closeProject(number)
+                    })
+                    const clickedDownchev = event.target.dataset.downchev
+                    openProject(clickedDownchev)
+                })
             })
-        })
 
-        const upchevs = document.querySelectorAll('.fa-chevron-up')
+            const upchevs = document.querySelectorAll('.close-toggle')
 
-        upchevs.forEach((upchev) => {
-            upchev.addEventListener('click', (event) => {
-                const clickedUpchev = event.target.dataset.upchev
-                closeProject(clickedUpchev)
+            upchevs.forEach((upchev) => {
+                upchev.addEventListener('click', (event) => {
+                    const clickedUpchev = event.target.dataset.upchev
+                    closeProject(clickedUpchev)
+                })
             })
-        })
 
     })
