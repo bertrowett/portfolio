@@ -40,23 +40,6 @@ fetch('projects.json')
             count += 1
         })
 
-        // Defining targets
-        // const arrow_p1 = document.querySelector('.arrow_p1')
-        // const arrow_p2 = document.querySelector('.arrow_p2')
-        // const arrow_p3 = document.querySelector('.arrow_p3')
-
-        // const downchev_p1 = document.querySelector('.downchev_p1')
-        // const downchev_p2 = document.querySelector('.downchev_p2')
-        // const downchev_p3 = document.querySelector('.downchev_p3')
-
-        // const upchev_p1 = document.querySelector('.upchev_p1')
-        // const upchev_p2 = document.querySelector('.upchev_p2')
-        // const upchev_p3 = document.querySelector('.upchev_p3')
-
-        // const content_p1 = document.querySelector('.content_p1')
-        // const content_p2 = document.querySelector('.content_p2')
-        // const content_p3 = document.querySelector('.content_p3')
-
         //Basic functions
         function makeGreen(target) {
             document.querySelector(target).classList.add('green');
