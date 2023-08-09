@@ -80,28 +80,46 @@ fetch('projects.json')
         openProject(0)
 
         //Event-called
-        document.querySelector('.downchev_p0').addEventListener('click', () => {
-            openProject(0) + closeProject(1) + closeProject(2)
-        })
+        // document.querySelector('.downchev_p0').addEventListener('click', () => {
+        //     openProject(0) + closeProject(1) + closeProject(2)
+        // })
 
-        document.querySelector('.downchev_p1').addEventListener('click', () => {
-            openProject(1) + closeProject(0) + closeProject(2)
-        })
+        // document.querySelector('.downchev_p1').addEventListener('click', () => {
+        //     openProject(1) + closeProject(0) + closeProject(2)
+        // })
 
-        document.querySelector('.downchev_p2').addEventListener('click', () => {
-            openProject(2) + closeProject(0) + closeProject(1)
-        })
+        // document.querySelector('.downchev_p2').addEventListener('click', () => {
+        //     openProject(2) + closeProject(0) + closeProject(1)
+        // })
 
-        document.querySelector('.upchev_p0').addEventListener('click', () => {
-            closeProject(0)
-        })
+        // document.querySelector('.upchev_p0').addEventListener('click', () => {
+        //     closeProject(0)
+        // })
 
-        document.querySelector('.upchev_p1').addEventListener('click', () => {
-            closeProject(1)
-        })
+        // document.querySelector('.upchev_p1').addEventListener('click', () => {
+        //     closeProject(1)
+        // })
         
-        document.querySelector('.upchev_p2').addEventListener('click', () => {
-            closeProject(2)
+        // document.querySelector('.upchev_p2').addEventListener('click', () => {
+        //     closeProject(2)
+        // })
+
+        const downchevs = document.querySelectorAll('.fa-chevron-down')
+
+        downchevs.forEach((downchev) => {
+            downchev.addEventListener('click', (event) => {
+                const clickedDownchev = event.target.dataset.downchev
+                openProject(clickedDownchev)
+            })
+        })
+
+        const upchevs = document.querySelectorAll('.fa-chevron-up')
+
+        upchevs.forEach((upchev) => {
+            upchev.addEventListener('click', (event) => {
+                const clickedUpchev = event.target.dataset.upchev
+                closeProject(clickedUpchev)
+            })
         })
 
     })
