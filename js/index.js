@@ -36,7 +36,7 @@ fetch('projects.json')
             projectsSection.innerHTML += content
         })
 
-        //Basic functions
+        // Basic functions
             function makeGreen(target) {
                 document.querySelector(target).classList.add('green');
             }
@@ -53,7 +53,7 @@ fetch('projects.json')
                 document.querySelector(target).classList.add('hidden');
             }
         
-        //Combined functions
+        // Combined functions
             function openProject(number) {
                 const arrow = '.arrow_p' + number
                 const downchev = '.downchev_p' + number
@@ -76,10 +76,10 @@ fetch('projects.json')
                 hide(content);
             }
 
-        //Immediately called
+        // Immediately called
             openProject(0)
 
-        //Event-called
+        // Event-called
             const downchevs = document.querySelectorAll('.open-toggle')
 
             downchevs.forEach((downchev) => {
@@ -103,3 +103,39 @@ fetch('projects.json')
             })
 
     })
+
+// Handling form (email) submission
+
+
+document.querySelector('.form-grid').addEventListener('submit', handleSubmit)
+
+function handleSubmit(submit) {
+    submit.preventDefault()
+    console.log('send clicked')
+    checkFields()
+    const nameInput = document.querySelector('#name').value
+    const emailInput = document.querySelector('#email').value
+    const subjectInput = document.querySelector('#subject').value
+    const messageInput = document.querySelector('#message').value
+    if (nameInput === '' || emailInput === '' || subjectInput === '' || messageInput === '') {
+        displayError()
+    } else {
+        document.querySelector('.form-grid').reset()
+    }
+}
+
+function checkFields() {
+    const formInputs = document.querySelectorAll('.input')
+    formInputs.forEach((input) => {
+        const label = 'label[for="' + input.id + '"]'
+        if (input.value === '') {
+            document.querySelector(label).classList.add('red')
+        } else {
+            document.querySelector(label).classList.remove('red')
+        }
+    })
+}
+
+function displayError() {
+    document.querySelector('.error-message').classList.remove('hidden')
+}
