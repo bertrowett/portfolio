@@ -105,8 +105,6 @@ fetch('projects.json')
     })
 
 // Handling form (email) submission
-
-
 document.querySelector('.form-grid').addEventListener('submit', handleSubmit)
 
 function handleSubmit(submit) {
@@ -120,6 +118,7 @@ function handleSubmit(submit) {
     if (nameInput === '' || emailInput === '' || subjectInput === '' || messageInput === '') {
         displayError()
     } else {
+        removeError()
         document.querySelector('.form-grid').reset()
     }
 }
@@ -138,4 +137,8 @@ function checkFields() {
 
 function displayError() {
     document.querySelector('.error-message').classList.remove('hidden')
+}
+
+function removeError() {
+    document.querySelector('.error-message').classList.add('hidden')
 }
