@@ -29,7 +29,7 @@
 
 <body>
     <header class="fixed z-50 top-0 w-full">
-        <nav class="pt-4 pl-4 flex gap-12">
+        <nav class="pt-4 pl-4 flex gap-12 max-[571px]:gap-9">
             <a href="#about" class="header-link"><span class="turquoise">about</span>/</a>
             <a href="#portfolio" class="header-link"><span class="turquoise">portfolio</span>/</a>
             <a href="#contact" class="header-link"><span class="turquoise">contact</span>/</a>
@@ -37,9 +37,9 @@
     </header>
     
     <main class="w-full px-4">
-        <section id="home" class="relative h-screen pt-24">
-            <h1 class="text-6xl max-[571px]:text-3xl turquoise"><span class="mr-12 green"><i class="fa-solid fa-right-long"></i></span>hello_world!</h1>
-            <p class="my-14">my name is <span class="">bert</span> and i'm an aspiring software developer; welcome to my portfolio!</p>
+        <section id="home" class="relative h-screen pt-24 max-[571px]:pt-16">
+            <h1 class="text-6xl max-[571px]:text-3xl turquoise"><span class="mr-12 max-[571px]:mr-6 green"><i class="fa-solid fa-right-long"></i></span>hello_world!</h1>
+            <p class="mt-14 max-[571px]:mt-5">my name is <span class="">bert</span> and i'm an aspiring software developer; welcome to my portfolio!</p>
             <footer>
                 <p class="absolute bottom-4">&copy 2023 iO Academy</p>
                 <div class="absolute bottom-4 left-0 w-full flex justify-center">
@@ -48,15 +48,15 @@
             </footer>
         </section>
         
-        <section id="about" class="relative h-screen pt-24">
-            <h2 class="text-6xl max-[571px]:text-3xl turquoise"><span class="mr-12 green"><i class="fa-solid fa-right-long"></i></span>about</h2>
-            <div class="flex gap-4 pt-14">
-                <div class="flex flex-col w-3/5 gap-4">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit cum illum perferendis animi, ipsa id exercitationem incidunt consectetur magnam aspernatur doloribus, odio voluptates consequatur! Dolor ipsa quam vero blanditiis iure?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vel soluta facere doloremque magni reprehenderit est consequatur, vero porro possimus modi expedita iure doloribus officia sit nobis inventore dolorum nisi.</p>
+        <section id="about" class="relative h-screen pt-24 max-[571px]:pt-16">
+            <h2 class="text-6xl max-[571px]:text-3xl turquoise"><span class="mr-12 max-[571px]:mr-6 green"><i class="fa-solid fa-right-long"></i></span>about</h2>
+            <div class="flex gap-4 pt-14 max-[571px]:pt-5 max-[571px]:flex-col-reverse max-[571px]:items-center">
+                <div class="flex flex-col w-3/5 gap-4 max-[571px]:w-full">
+                    <p>lorem ipsum dolor sit amet consectetur adipisicing elit. impedit cum illum perferendis animi, ipsa id exercitationem incidunt consectetur magnam aspernatur doloribus, odio voluptates consequatur! dolor ipsa quam vero blanditiis iure?</p>
+                    <p>lorem ipsum dolor sit amet consectetur adipisicing elit. eaque vel soluta facere doloremque magni reprehenderit est consequatur, vero porro possimus modi expedita iure doloribus officia sit nobis inventore dolorum nisi.</p>
                 </div>
-                <div class="w-2/5">
-                    <img src="images/profile_photo.jpg" alt="..." />
+                <div class="w-2/5 max-[571px]:w-3/5">
+                    <img src="images/profile_photo.jpg" alt="Portrait of Bert with his hands partially obscuring face" />
                 </div>
             </div>
             <footer>
@@ -67,9 +67,9 @@
             </footer>
         </section>
         
-        <section id="portfolio" class="relative h-screen pt-24">
-            <h2 class="text-6xl max-[571px]:text-3xl turquoise"><span class="mr-12 green"><i class="fa-solid fa-right-long"></i></span>portfolio</h2>
-            <section class="projects pt-10"></section>
+        <section id="portfolio" class="relative h-screen pt-24 max-[571px]:pt-16">
+            <h2 class="text-6xl max-[571px]:text-3xl turquoise"><span class="mr-12 max-[571px]:mr-6 green"><i class="fa-solid fa-right-long"></i></span>portfolio</h2>
+            <section class="projects pt-10 max-[571px]:pt-1"></section>
 
             <footer>
                 <p class="absolute bottom-4">&copy 2023 iO Academy</p>
@@ -79,14 +79,14 @@
             </footer>
         </section>
         
-        <section id="contact" class="relative h-screen pt-24">
-            <h2 class="text-6xl max-[571px]:text-3xl turquoise"><span class="mr-12 green"><i class="fa-solid fa-right-long"></i></span>contact</h2>
-            <p class="pt-14">find me on github and linkedin:</p>
+        <section id="contact" class="relative h-screen pt-24 max-[571px]:pt-16">
+            <h2 class="text-6xl max-[571px]:text-3xl turquoise"><span class="mr-12 max-[571px]:mr-6 green"><i class="fa-solid fa-right-long"></i></span>contact</h2>
+            <p class="pt-14 max-[571px]:pt-5">find me on github and linkedin:</p>
             <nav class="pt-4">
                 <a href="https://github.com/bertrowett" target="_blank" rel="noreferrer noopener"><i class="ext-link fa-brands fa-github text-2xl mr-8"></i></a>
                 <a href="https://www.linkedin.com/in/bertrowett/" target="_blank" rel="noreferrer noopener"><i class="ext-link fa-brands fa-linkedin text-2xl"></i></a>
             </nav>
-            <p class="pt-8">alternatively, email me via the form below:</p>
+            <p class="pt-4">alternatively, email me via the form below:</p>
             <form class="form-grid grid gap-4 mt-4">
                     <label for="name" class="yellow">name</label>
                     <input type="text" id="name" class="input border p-1 max-w-3xl" />
@@ -95,7 +95,7 @@
                     <label for="subject" class="yellow">subject</label>
                     <input type="text" id="subject" class="input border p-1 max-w-3xl" />
                     <label for="message" class="yellow">message</label>
-                    <textarea id="message" class="input border p-1 max-w-3xl max-h-20"></textarea>
+                    <textarea id="message" class="input border p-1 max-w-3xl max-h-20 max-[571px]:h-60 max-[571px]:max-h-60"></textarea>
                     <p class="error-message col-start-2 max-w-auto red hidden">error: not all fields completed</p>
                     <input type="submit" value="send" class="send-email col-start-2 w-16 border p-1" />
             </form>

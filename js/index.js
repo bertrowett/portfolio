@@ -15,13 +15,13 @@ fetch('projects.json')
             content +='</h3>'
 
             // Content flex container
-            content += '<div class="content_p' + index + ' pt-4 flex gap-4 hidden">'
+            content += '<div class="content_p' + index + ' pt-4 flex gap-4 hidden max-[571px]:flex-col max-[571px]:items-center">'
                 // Image
-                content += '<div class="w-2/5">'
+                content += '<div class="w-2/5 max-[571px]:w-3/5">'
                     content += '<img src="' + project.img + '" alt="' + project.img_alt + '" />'
                 content += '</div>'
                 // Text + icons flex container
-                content += '<div class="w-3/5 flex flex-col gap-4 justify-between">'
+                content += '<div class="w-3/5 max-[571px]:w-full flex flex-col gap-4 justify-between">'
                     // Summary text
                     content += '<p>' + project.summary + '</p>'
                     // Icons
