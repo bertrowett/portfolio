@@ -77,3 +77,9 @@ header {
   background-color: var(--white);
   color: var(--black);
 }
+
+@media screen and (max-width: 571px) {
+  html {
+    font-size: 0.75rem;
+  }
+}
