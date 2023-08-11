@@ -17,11 +17,9 @@ fetch('projects.json')
             // Content flex container
             content += '<div class="content_p' + index + ' pt-4 flex gap-4 hidden max-[767px]:flex-col max-[767px]:items-center">'
                 // Image
-                content += '<div class="w-2/5 max-w-sm max-[767px]:w-72 max-[571px]:w-3/5">'
-                    content += '<img src="' + project.img + '" alt="' + project.img_alt + '" />'
-                content += '</div>'
+                content += '<img src="' + project.img + '" alt="' + project.img_alt + '" class="w-2/5 min-[1008px]:w-96 max-[767px]:w-72 max-[571px]:w-3/5" />'
                 // Text + icons flex container
-                content += '<div class="w-3/5 max-[767px]:w-full flex flex-col gap-4 justify-between">'
+                content += '<div class="w-3/5 min-[1008px]:w-auto max-[767px]:w-full flex flex-col gap-4 justify-between">'
                     // Summary text
                     content += '<p>' + project.summary + '</p>'
                     // Icons
